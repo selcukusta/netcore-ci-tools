@@ -1,5 +1,5 @@
 jobs:
-  - name: script-build.sh
+  - name: RunBuildAndTestShells
     type: runSh
     steps:
       - TASK:
