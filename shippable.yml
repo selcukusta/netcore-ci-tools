@@ -10,6 +10,10 @@ build:
     - sudo apt-get install -y xsltproc
     - chmod g+w ./shippable/testresults
     - chmod g+w ./shippable/xunit-result
+    - chmod a+x ./scripts/build.sh
+    - ./scripts/build.sh
+    - chmod a+x ./scripts/test.sh
+    - ./scripts/test.sh
   post_ci:
     - export REPO=selcukusta/netcore-shippable-ci-test-sample
     - export TAG=`if [ "$BRANCH" == "master" ]; then echo "latest"; else echo $BRANCH ; fi`

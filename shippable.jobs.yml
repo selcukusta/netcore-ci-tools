@@ -1,9 +1,0 @@
-jobs:
-  - name: RunBuildAndTestShells
-    type: runSh
-    steps:
-      - TASK:
-        - script: chmod a+x ./scripts/build.sh
-        - script: chmod a+x ./scripts/test.sh
-        - script: ./scripts/build.sh
-        - script: ./scripts/test.sh
