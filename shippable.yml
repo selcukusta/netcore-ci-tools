@@ -6,6 +6,10 @@ build:
     image_tag: 1.1-sdk
     pull: true
     options: "-e HOME=/root"
+  ci:
+    - sudo apt-get install -y xsltproc
+    - chmod g+w ./shippable/testresults
+    - chmod g+w ./shippable/xunit-result
   post_ci:
     - export REPO=selcukusta/netcore-shippable-ci-test-sample
     - export TAG=`if [ "$BRANCH" == "master" ]; then echo "latest"; else echo $BRANCH ; fi`

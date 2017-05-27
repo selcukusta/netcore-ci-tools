@@ -7,7 +7,11 @@ dotnet: 1.0.4
 branches:
   only:
     - master
+before_install:
+  - sudo apt-get install -y xsltproc
 before_script:
+  - chmod g+w ./shippable/testresults
+  - chmod g+w ./shippable/xunit-result
   - chmod a+x ./scripts/build.sh
   - chmod a+x ./scripts/test.sh
 script:

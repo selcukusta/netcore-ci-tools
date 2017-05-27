@@ -1,5 +1,4 @@
 #!/bin/bash
-apt-get --assume-yes install xsltproc
 cd ./src/NetCoreTestCI.Test
 dotnet restore
 dotnet build --configuration Release
