@@ -1,0 +1,21 @@
+language: none
+
+build:
+  pre_ci_boot:
+    image_name: microsoft/dotnet
+    image_tag: 1.1-sdk
+    pull: true
+    options: "-e HOME=/root"
+  post_ci:
+    - export REPO=selcukusta/netcore-shippable-ci-test-sample
+    - export TAG=`if [ "$BRANCH" == "master" ]; then echo "latest"; else echo $BRANCH ; fi`
+    - docker build -f Dockerfile -t $REPO:$TAG .
+    - docker tag $REPO:$TAG $REPO:netcoresample-build-$TRAVIS_BUILD_NUMBER
+    - docker push $REPO
+integrations:                               
+  hub:
+    - integrationName: docker-hub-integration
+      type: docker
+      branches:
+        only:
+          - master   

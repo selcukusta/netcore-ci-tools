@@ -1,0 +1,7 @@
+jobs:
+  - name: script-build.sh
+    type: runSh
+    steps:
+      - TASK:
+        - script: chmod a+x ./scripts/build.sh
+        - script: chmod a+x ./scripts/test.sh
