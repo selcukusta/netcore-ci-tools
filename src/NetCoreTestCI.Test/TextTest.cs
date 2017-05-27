@@ -8,6 +8,7 @@ namespace NetCoreTestCI.Test
         [Theory]
         [InlineData("Hello .Net Core!", "hello-net-core")]
         [InlineData("Türkçe karakterler çok şanssız!", "turkce-karakterler-cok-sanssiz")]
+        [InlineData("Ahoj světe.", "ahoj-svete")]
         public void TestSlugify(string actual, string expected)
         {
             var result = Text.Slugify(actual);

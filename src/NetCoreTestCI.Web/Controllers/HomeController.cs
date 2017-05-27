@@ -14,7 +14,7 @@ namespace NetCoreTestCI.Web.Controllers
         [HttpGet]
         public ContentResult Get()
         {
-            return Content("Please pass a parameter like /Hello World");
+            return Content("Please call as /api/home/{word}", "text/html");
         }
 
         // GET api/home/5
